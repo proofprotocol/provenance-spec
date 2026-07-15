@@ -13,4 +13,4 @@ Defines provenance requirements for proof artifacts produced under the Proof Pro
 
 ## License
 
-CC BY 4.0 — Attribution to Craig Ellrod / Nebulonium, Inc. / HACKERverse required.
+CC BY 4.0 — Attribution to Craig Ellrod / Nebulonium, Inc. required.
