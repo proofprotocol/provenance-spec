@@ -12,7 +12,7 @@
 
 ## Abstract
 
-This specification defines provenance requirements for proof artifacts produced under the Proof Protocol™. Provenance is independently verifiable evidence of the origin, lineage, and custody chain of a proof artifact — who produced it, under what conditions, from what inputs, and whether it has been altered since production.
+This specification defines provenance requirements for proof artifacts produced under the Proof Protocol™. Provenance is independently verifiable evidence of the origin, lineage, and custody chain of a proof artifact - who produced it, under what conditions, from what inputs, and whether it has been altered since production.
 
 Provenance is the property that answers: "Where did this proof come from, and can I verify that independently?"
 
@@ -32,7 +32,7 @@ This document is a published specification of the Proof Protocol™. It is relea
 
 A proof artifact without provenance can be fabricated after the fact. An attacker, a vendor, or a malicious auditor can construct a document that looks like a proof, assign it a plausible timestamp, and present it as evidence. Without an independent provenance mechanism, there is no way for a third party to distinguish a genuine proof from a fabricated one.
 
-This is not a theoretical risk. In cybersecurity, the entity being evaluated controls the environment in which evaluation occurs. Without external provenance anchoring, every benchmark result, penetration test report, and efficacy score is self-reported evidence — the entity being watched writes its own report card.
+This is not a theoretical risk. In cybersecurity, the entity being evaluated controls the environment in which evaluation occurs. Without external provenance anchoring, every benchmark result, penetration test report, and efficacy score is self-reported evidence - the entity being watched writes its own report card.
 
 ### 1.2 The Proof Protocol™ Approach
 
@@ -62,21 +62,21 @@ This specification does not define:
 
 ## 2. Definitions
 
-**Provenance Record** — The structured set of fields in a proof artifact that establish its origin, lineage, and custody chain.
+**Provenance Record** - The structured set of fields in a proof artifact that establish its origin, lineage, and custody chain.
 
-**Pre-Execution Commitment** — A cryptographic commitment to test parameters made before execution begins, anchored to a NIST Beacon pulse that had not yet been published at the time of commitment initiation.
+**Pre-Execution Commitment** - A cryptographic commitment to test parameters made before execution begins, anchored to a NIST Beacon pulse that had not yet been published at the time of commitment initiation.
 
-**Pulse Index** — The sequential identifier of a NIST Randomness Beacon pulse, used to identify a specific 60-second window in the Beacon's output chain.
+**Pulse Index** - The sequential identifier of a NIST Randomness Beacon pulse, used to identify a specific 60-second window in the Beacon's output chain.
 
-**Commitment Hash** — A SHA-256 hash of the canonical serialization of committed test parameters, recorded alongside the pulse index at commitment time.
+**Commitment Hash** - A SHA-256 hash of the canonical serialization of committed test parameters, recorded alongside the pulse index at commitment time.
 
-**Lineage** — The documented chain of transformations from raw execution data to final proof artifact.
+**Lineage** - The documented chain of transformations from raw execution data to final proof artifact.
 
-**Custody Event** — Any transfer of a proof artifact from one party to another, or any transformation applied to it.
+**Custody Event** - Any transfer of a proof artifact from one party to another, or any transformation applied to it.
 
-**Origin Timestamp** — The timestamp of the NIST Beacon pulse to which execution was committed. This is the earliest possible time at which the proof artifact could have been produced.
+**Origin Timestamp** - The timestamp of the NIST Beacon pulse to which execution was committed. This is the earliest possible time at which the proof artifact could have been produced.
 
-**Proof Record ID (PCID)** — The globally unique identifier assigned to a proof record by ProofRegister™ upon submission. See PP-SPEC-004.
+**Proof Record ID (PCID)** - The globally unique identifier assigned to a proof record by ProofRegister™ upon submission. See PP-SPEC-004.
 
 ---
 
@@ -278,4 +278,4 @@ Castle Rock, Colorado
 
 ---
 
-*CC BY 4.0 — Attribution to Craig Ellrod / Nebulonium, Inc. required.*
+*CC BY 4.0 - Attribution to Craig Ellrod / Nebulonium, Inc. required.*
