@@ -54,7 +54,7 @@ This specification defines:
 
 This specification does not define:
 - The format of the ProofBundle (see PP-SPEC-003)
-- The ProofRegistry API (see PP-SPEC-004)
+- The ProofRegister API (see PP-SPEC-004)
 - The Witness Protocol (see PP-SPEC-005)
 - Legal attestation packaging (see PP-SPEC-010)
 
