@@ -22,7 +22,7 @@ Without provenance, a proof artifact is a document. With provenance, it is evide
 
 ## Status of This Document
 
-This document is a published specification of the Proof Protocol™. It is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0). You may copy, distribute, and adapt this specification for any purpose provided attribution is given to Craig Ellrod / Nebulonium, Inc. / HACKERverse.
+This document is a published specification of the Proof Protocol™. It is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0). You may copy, distribute, and adapt this specification for any purpose provided attribution is given to Craig Ellrod / Nebulonium, Inc..
 
 ---
 
@@ -278,4 +278,4 @@ Castle Rock, Colorado
 
 ---
 
-*CC BY 4.0 — Attribution to Craig Ellrod / Nebulonium, Inc. / HACKERverse required.*
+*CC BY 4.0 — Attribution to Craig Ellrod / Nebulonium, Inc. required.*
