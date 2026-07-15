@@ -4,7 +4,7 @@
 **Version:** 1.0  
 **Status:** Published  
 **License:** CC BY 4.0  
-**Maintained by:** Proof Economy Standards Alliance (PESA)  
+**Maintained by:** Proof Economy™ Standards Alliance (PESA)  
 **Repository:** https://github.com/proofprotocol  
 **Published:** 2026-07-14  
 
@@ -12,7 +12,7 @@
 
 ## Abstract
 
-This specification defines provenance requirements for proof artifacts produced under the Proof Protocol. Provenance is independently verifiable evidence of the origin, lineage, and custody chain of a proof artifact — who produced it, under what conditions, from what inputs, and whether it has been altered since production.
+This specification defines provenance requirements for proof artifacts produced under the Proof Protocol™. Provenance is independently verifiable evidence of the origin, lineage, and custody chain of a proof artifact — who produced it, under what conditions, from what inputs, and whether it has been altered since production.
 
 Provenance is the property that answers: "Where did this proof come from, and can I verify that independently?"
 
@@ -22,7 +22,7 @@ Without provenance, a proof artifact is a document. With provenance, it is evide
 
 ## Status of This Document
 
-This document is a published specification of the Proof Protocol. It is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0). You may copy, distribute, and adapt this specification for any purpose provided attribution is given to Craig Ellrod / Nebulonium, Inc. / HACKERverse.
+This document is a published specification of the Proof Protocol™. It is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0). You may copy, distribute, and adapt this specification for any purpose provided attribution is given to Craig Ellrod / Nebulonium, Inc. / HACKERverse.
 
 ---
 
@@ -34,11 +34,11 @@ A proof artifact without provenance can be fabricated after the fact. An attacke
 
 This is not a theoretical risk. In cybersecurity, the entity being evaluated controls the environment in which evaluation occurs. Without external provenance anchoring, every benchmark result, penetration test report, and efficacy score is self-reported evidence — the entity being watched writes its own report card.
 
-### 1.2 The Proof Protocol Approach
+### 1.2 The Proof Protocol™ Approach
 
-The Proof Protocol solves provenance through pre-execution commitment to an unpredictable external randomness source. The NIST Randomness Beacon (https://beacon.nist.gov) produces a new 512-bit random value every 60 seconds. It cannot be predicted in advance. It cannot be retroactively altered.
+The Proof Protocol™ solves provenance through pre-execution commitment to an unpredictable external randomness source. The NIST Randomness Beacon (https://beacon.nist.gov) produces a new 512-bit random value every 60 seconds. It cannot be predicted in advance. It cannot be retroactively altered.
 
-By committing test parameters to a NIST Beacon pulse before execution begins, the Proof Protocol creates a cryptographic link between the proof artifact and a specific moment in time that no party controls. If the pulse value is in the provenance record, the artifact was produced after that pulse. If execution parameters hash to the committed value, they were not altered after commitment.
+By committing test parameters to a NIST Beacon pulse before execution begins, the Proof Protocol™ creates a cryptographic link between the proof artifact and a specific moment in time that no party controls. If the pulse value is in the provenance record, the artifact was produced after that pulse. If execution parameters hash to the committed value, they were not altered after commitment.
 
 This makes retroactive fabrication structurally impossible, not merely detectable.
 
@@ -46,15 +46,15 @@ This makes retroactive fabrication structurally impossible, not merely detectabl
 
 This specification defines:
 
-- Required provenance fields for a Proof Protocol artifact
+- Required provenance fields for a Proof Protocol™ artifact
 - The pre-execution commitment mechanism
 - Lineage requirements for derived artifacts
 - Chain of custody requirements for proof submission
 - Provenance verification procedure
 
 This specification does not define:
-- The format of the ProofBundle (see PP-SPEC-003)
-- The ProofRegister API (see PP-SPEC-004)
+- The format of the ProofBundle™ (see PP-SPEC-003)
+- The ProofRegister™ API (see PP-SPEC-004)
 - The Witness Protocol (see PP-SPEC-005)
 - Legal attestation packaging (see PP-SPEC-010)
 
@@ -76,7 +76,7 @@ This specification does not define:
 
 **Origin Timestamp** — The timestamp of the NIST Beacon pulse to which execution was committed. This is the earliest possible time at which the proof artifact could have been produced.
 
-**Proof Record ID (PCID)** — The globally unique identifier assigned to a proof record by ProofRegister upon submission. See PP-SPEC-004.
+**Proof Record ID (PCID)** — The globally unique identifier assigned to a proof record by ProofRegister™ upon submission. See PP-SPEC-004.
 
 ---
 
@@ -100,8 +100,8 @@ A conformant provenance record MUST contain the following fields:
 | `execution.operator` | string | Identity of the party conducting execution |
 | `witness.identity` | string | Identity of the independent witness (see PP-SPEC-005) |
 | `witness.attestation_hash` | hex string (64 chars) | SHA-256 of the witness attestation document |
-| `artifact.bundle_hash` | hex string (64 chars) | SHA-256 of the ProofBundle (PP-SPEC-003) produced |
-| `artifact.produced_at` | ISO 8601 datetime | Timestamp at which the ProofBundle was assembled |
+| `artifact.bundle_hash` | hex string (64 chars) | SHA-256 of the ProofBundle™ (PP-SPEC-003) produced |
+| `artifact.produced_at` | ISO 8601 datetime | Timestamp at which the ProofBundle™ was assembled |
 | `custody` | array | Ordered list of custody events (see 3.2) |
 
 ### 3.2 Custody Event Fields
@@ -121,8 +121,8 @@ Each entry in the `custody` array MUST contain:
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `anchor.proofregister_id` | string | Proof Record ID (PCID) assigned by ProofRegister |
-| `anchor.proofregister_pulse_index` | integer | NIST Beacon pulse index at time of ProofRegister submission |
+| `anchor.proofregister_id` | string | Proof Record ID (PCID) assigned by ProofRegister™ |
+| `anchor.proofregister_pulse_index` | integer | NIST Beacon pulse index at time of ProofRegister™ submission |
 | `anchor.blockchain_tx` | string | Optional blockchain transaction hash (supplemental, not authoritative) |
 | `lineage` | array | Ordered list of transformation events applied to raw data |
 | `related_artifacts` | array | PCIDs or hashes of related proof artifacts |
@@ -190,7 +190,7 @@ If all four checks pass, the proof was committed before execution and could not 
 
 ### 5.1 Definition
 
-Lineage documents the chain of transformations from raw execution output to the final ProofBundle. Each transformation that materially affects the artifact content must be recorded.
+Lineage documents the chain of transformations from raw execution output to the final ProofBundle™. Each transformation that materially affects the artifact content must be recorded.
 
 ### 5.2 Lineage Event Fields
 
@@ -208,8 +208,8 @@ Lineage documents the chain of transformations from raw execution output to the 
 At minimum, the following lineage steps MUST be recorded:
 
 1. Raw execution output → parsed proof records
-2. Parsed proof records → ProofBundle assembly
-3. ProofBundle → ProofRegister submission (if submitted)
+2. Parsed proof records → ProofBundle™ assembly
+3. ProofBundle™ → ProofRegister™ submission (if submitted)
 
 ---
 
@@ -217,15 +217,15 @@ At minimum, the following lineage steps MUST be recorded:
 
 A proof artifact's provenance is verified by a third party as follows:
 
-1. **Locate the provenance record.** It is embedded in the ProofBundle or available via ProofRegister at the PCID.
+1. **Locate the provenance record.** It is embedded in the ProofBundle™ or available via ProofRegister™ at the PCID.
 
 2. **Verify the NIST Beacon commitment.** Query the Beacon for the recorded pulse index. Confirm the output value matches. Recompute the commitment hash. Confirm execution started after the pulse.
 
-3. **Verify the artifact hash chain.** Recompute SHA-256 of the ProofBundle and confirm it matches `artifact.bundle_hash`. Trace custody events and confirm hashes are consistent.
+3. **Verify the artifact hash chain.** Recompute SHA-256 of the ProofBundle™ and confirm it matches `artifact.bundle_hash`. Trace custody events and confirm hashes are consistent.
 
 4. **Verify witness attestation.** Recompute SHA-256 of the witness attestation document and confirm it matches `witness.attestation_hash`. Confirm witness identity is independent of operator (see PP-SPEC-005).
 
-5. **Confirm ProofRegister anchor (if present).** Query ProofRegister at the PCID. Confirm the stored record matches.
+5. **Confirm ProofRegister™ anchor (if present).** Query ProofRegister™ at the PCID. Confirm the stored record matches.
 
 If steps 1–4 pass, provenance is verified. Step 5 provides an additional independent anchor but is not required for provenance verification.
 
@@ -247,9 +247,9 @@ A proof artifact is conformant with PP-SPEC-011 if:
 
 | Specification | Relationship |
 |---------------|-------------|
-| PP-SPEC-001 | PP-SPEC-011 implements the provenance requirements of the core Proof Protocol |
-| PP-SPEC-003 | The ProofBundle embeds or references the PP-SPEC-011 provenance record |
-| PP-SPEC-004 | ProofRegister stores and serves provenance records alongside proof records |
+| PP-SPEC-001 | PP-SPEC-011 implements the provenance requirements of the core Proof Protocol™ |
+| PP-SPEC-003 | The ProofBundle™ embeds or references the PP-SPEC-011 provenance record |
+| PP-SPEC-004 | ProofRegister™ stores and serves provenance records alongside proof records |
 | PP-SPEC-005 | Witness identity requirements referenced in Section 3.1 |
 | PP-SPEC-008 | NIST Beacon anchoring mechanism used by the commitment procedure |
 | PP-SPEC-010 | Legal attestation package includes the provenance record |
@@ -258,7 +258,7 @@ A proof artifact is conformant with PP-SPEC-011 if:
 
 ## 9. Reference Implementation
 
-The reference implementation of the pre-execution commitment procedure is the Pipelock v3.0.0 ProofStamp certification run:
+The reference implementation of the pre-execution commitment procedure is the Pipelock v3.0.0 ProofStamp™ certification run:
 
 - **Proof Record ID:** PR-2026-00028  
 - **NIST Beacon Pulse Index:** 1852788  
