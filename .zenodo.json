@@ -1,0 +1,25 @@
+{
+  "title": "PP-SPEC-011: Proof Provenance Specification",
+  "upload_type": "publication",
+  "creators": [
+    {
+      "name": "Ellrod, Craig",
+      "affiliation": "Nebulonium, Inc. (HACKERverse)"
+    }
+  ],
+  "description": "PP-SPEC-011: Proof Provenance Specification",
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "keywords": [
+    "proof-protocol",
+    "provenance"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/proofprotocol/provenance-spec",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "publication_type": "technicalnote"
+}
