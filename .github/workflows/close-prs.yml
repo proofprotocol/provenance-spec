@@ -1,0 +1,18 @@
+name: Close pull requests
+on:
+  pull_request_target:
+    types: [opened, reopened]
+permissions:
+  pull-requests: write
+jobs:
+  close:
+    if: github.event.pull_request.user.login != github.repository_owner
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          gh pr comment "$PR" --repo "$REPO" --body "Proof Protocol is not accepting contributions at this time. This pull request has been closed without review. See CONTRIBUTING.md."
+          gh pr close "$PR" --repo "$REPO"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
