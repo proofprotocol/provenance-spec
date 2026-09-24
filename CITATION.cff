@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you reference or build on this work, please cite it as below."
+title: "PP-SPEC-011: Proof Provenance Specification"
+authors:
+  - family-names: Ellrod
+    given-names: Craig
+    affiliation: "Nebulonium, Inc. (HACKERverse)"
+version: "1.0"
+date-released: 2026-07-15
+doi: 10.5281/zenodo.21379780
+license: CC-BY-4.0
+url: "https://proofprotocol.io"
+repository-code: "https://github.com/proofprotocol/provenance-spec"
+preferred-citation:
+  type: standard
+  title: "PP-SPEC-011: Proof Provenance Specification"
+  authors:
+    - family-names: Ellrod
+      given-names: Craig
+  year: 2026
+  month: 7
+  publisher:
+    name: "Proof Economy Standards Alliance (PESA)"
+  doi: 10.5281/zenodo.21379780
+  url: "https://github.com/proofprotocol/provenance-spec"
+  license: CC-BY-4.0
