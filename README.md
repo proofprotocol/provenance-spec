@@ -277,6 +277,19 @@ This run predates any published standard defining provenance requirements for AI
 
 ---
 
+## Extensions
+
+provenance records MAY use the universal Proof Protocol `extensions` mechanism defined by **PP-SPEC-001**. Extension keys MUST use globally distinguishable namespaces; reverse-domain notation is RECOMMENDED.
+
+Implementations MAY add custody, source-system, hardware, signing, or domain-specific provenance metadata. Extensions MUST NOT replace or weaken normative provenance, integrity, temporal, or independence requirements.
+
+A conforming implementation MUST be able to ignore an unknown extension and still evaluate this specification's core semantics. Extension-specific validation is supplemental and MUST remain distinguishable from core Proof Protocol conformance.
+
+> **Extensions enrich the object. They do not redefine the protocol.**
+
+---
+
+
 ## 10. Authors
 
 Craig Ellrod, Founder & CEO, Nebulonium, Inc. (d/b/a HACKERverse)  
