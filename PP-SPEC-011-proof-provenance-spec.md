@@ -3,7 +3,7 @@
 # Proof Provenance Specification
 
 **Document ID:** PP-SPEC-011  
-**Version:** 1.0  
+**Version:** 1.1  
 **Status:** Published  
 **License:** CC BY 4.0  
 **Maintained by:** Proof Economy™ Standards Alliance (PESA)  
@@ -72,6 +72,8 @@ This specification does not define:
 
 **Commitment Hash** - A SHA-256 hash of the canonical serialization of committed test parameters, recorded alongside the pulse index at commitment time.
 
+**Digest** - Every hash value in a provenance record MUST be encoded as an algorithm-tagged string: the algorithm identifier, a colon, then the lowercase hex digest (for example `sha256:` followed by 64 hex characters). `sha256` is the only algorithm defined in this version. Verifiers MUST reject a digest whose algorithm identifier is missing or unrecognized. Records with schema_version `"1.0"` used bare 64-character hex; verifiers MAY accept those as SHA-256 when the record declares schema_version `"1.0"`.
+
 **Lineage** - The documented chain of transformations from raw execution data to final proof artifact.
 
 **Custody Event** - Any transfer of a proof artifact from one party to another, or any transformation applied to it.
@@ -90,19 +92,19 @@ A conformant provenance record MUST contain the following fields:
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `schema_version` | string | Provenance schema version. Current: `"1.0"` |
+| `schema_version` | string | Provenance schema version. Current: `"1.1"` |
 | `document_id` | string | `"PP-SPEC-011"` |
 | `commitment.pulse_index` | integer | NIST Beacon pulse index at time of pre-execution commitment |
 | `commitment.pulse_timestamp` | ISO 8601 datetime | Timestamp of the committed pulse |
 | `commitment.pulse_value` | hex string (128 chars) | 512-bit output value of the committed pulse |
-| `commitment.commitment_hash` | hex string (64 chars) | SHA-256 of canonical serialization of committed parameters |
+| `commitment.commitment_hash` | digest (`sha256:` + 64 hex) | SHA-256 of canonical serialization of committed parameters |
 | `commitment.committed_at` | ISO 8601 datetime | Timestamp at which commitment was recorded by the committing party |
 | `execution.start_time` | ISO 8601 datetime | Time at which execution began, must be after `commitment.pulse_timestamp` |
 | `execution.end_time` | ISO 8601 datetime | Time at which execution concluded |
 | `execution.operator` | string | Identity of the party conducting execution |
 | `witness.identity` | string | Identity of the independent witness (see PP-SPEC-005) |
-| `witness.attestation_hash` | hex string (64 chars) | SHA-256 of the witness attestation document |
-| `artifact.bundle_hash` | hex string (64 chars) | SHA-256 of the ProofBundle™ (PP-SPEC-003) produced |
+| `witness.attestation_hash` | digest (`sha256:` + 64 hex) | SHA-256 of the witness attestation document |
+| `artifact.bundle_hash` | digest (`sha256:` + 64 hex) | SHA-256 of the ProofBundle™ (PP-SPEC-003) produced |
 | `artifact.produced_at` | ISO 8601 datetime | Timestamp at which the ProofBundle™ was assembled |
 | `custody` | array | Ordered list of custody events (see 3.2) |
 
@@ -116,7 +118,7 @@ Each entry in the `custody` array MUST contain:
 | `timestamp` | ISO 8601 datetime | Time of the custody event |
 | `from_party` | string | Identity of transferring party (null for PRODUCED) |
 | `to_party` | string | Identity of receiving party |
-| `artifact_hash` | hex string (64 chars) | SHA-256 of the artifact at time of this event |
+| `artifact_hash` | digest (`sha256:` + 64 hex) | SHA-256 of the artifact at time of this event |
 | `notes` | string | Optional. Human-readable description of the event |
 
 ### 3.3 Optional Fields
@@ -127,7 +129,7 @@ Each entry in the `custody` array MUST contain:
 | `anchor.proofregister_pulse_index` | integer | NIST Beacon pulse index at time of ProofRegister™ submission |
 | `anchor.blockchain_tx` | string | Optional blockchain transaction hash (supplemental, not authoritative) |
 | `lineage` | array | Ordered list of transformation events applied to raw data |
-| `related_artifacts` | array | PCIDs or hashes of related proof artifacts |
+| `related_artifacts` | array | PCIDs or digests of related proof artifacts |
 
 ---
 
@@ -164,7 +166,7 @@ Canonical serialization format: JSON with keys sorted alphabetically, no whitesp
 **Step 3: Compute commitment hash**
 
 ```
-commitment_hash = SHA-256(canonical_serialization)
+commitment_hash = "sha256:" + hex(SHA-256(canonical_serialization))
 ```
 
 **Step 4: Record commitment**
@@ -200,8 +202,8 @@ Lineage documents the chain of transformations from raw execution output to the 
 |-------|------|-------------|
 | `step` | integer | Sequential step number |
 | `transformation` | string | Human-readable description of the transformation |
-| `input_hash` | hex string (64 chars) | SHA-256 of the input artifact |
-| `output_hash` | hex string (64 chars) | SHA-256 of the output artifact |
+| `input_hash` | digest (`sha256:` + 64 hex) | SHA-256 of the input artifact |
+| `output_hash` | digest (`sha256:` + 64 hex) | SHA-256 of the output artifact |
 | `performed_by` | string | Identity of the party performing the transformation |
 | `timestamp` | ISO 8601 datetime | Time of transformation |
 
