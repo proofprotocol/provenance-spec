@@ -8,7 +8,7 @@ authors:
 version: "1.0"
 date-released: 2026-07-15
 doi: 10.5281/zenodo.21379780
-license: CC-BY-4.0
+license-url: "https://github.com/proofprotocol/provenance-spec/blob/main/LICENSE.md"
 url: "https://proofprotocol.io"
 repository-code: "https://github.com/proofprotocol/provenance-spec"
 preferred-citation:
@@ -23,4 +23,4 @@ preferred-citation:
     name: "Proof Economy Standards Alliance (PESA)"
   doi: 10.5281/zenodo.21379780
   url: "https://github.com/proofprotocol/provenance-spec"
-  license: CC-BY-4.0
+  license-url: "https://github.com/proofprotocol/provenance-spec/blob/main/LICENSE.md"

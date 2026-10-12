@@ -5,7 +5,7 @@
 **Document ID:** PP-SPEC-011  
 **Version:** 1.1  
 **Status:** Published  
-**License:** CC BY 4.0  
+**License:** Greater Good Commercial License 1.0 (GGL-C-1.0); text CC BY-ND 4.0 under Part S. See LICENSE.md.
 **Maintained by:** Proof Economy™ Standards Alliance (PESA)  
 **Repository:** https://github.com/proofprotocol  
 **Published:** 2026-07-14  
