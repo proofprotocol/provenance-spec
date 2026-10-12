@@ -28,7 +28,7 @@ MARKS="Proof Protocol, ProofSwarm, ProofFlock, ProofStamp, ProofRegister, HACKER
 # Covered Work
 COVERED_WORK="Proof Provenance Specification"     # Name and number of the work this copy covers
 COVERED_WORK_VERSION="1.0.0"                      # Version of the covered work, x.y.z
-SPEC_LICENSE="CC BY-ND 4.0"                       # Part S license for the text
+SPEC_LICENSE="CC BY 4.0"                       # Part S license for the text
 OFFERED_LICENSES="GGL-C-1.0"                      # Family licenses this work is offered under, comma separated: GGL-OS-1.0, GGL-EGR-1.0, GGL-C-1.0
 PATENT_SCHEDULE="PATENT-SCHEDULE.md"              # Path or URL of the Patent Schedule (P.1)
 PATENT_SCHEDULE_VERSION="1"                       # Patent Schedule version number
@@ -102,7 +102,7 @@ Covered Work: Proof Provenance Specification, version 1.0.0
 Offered under: GGL-C-1.0
 Original Inventor: Craig Thomas Ellrod, ORCID 0009-0004-1058-7666
 Inventor Record: DOI [[UNFILLED: INVENTOR_RECORD_DOI]]
-Specification text: CC BY-ND 4.0
+Specification text: CC BY 4.0
 Patent Schedule: PATENT-SCHEDULE.md, version 1
 ```
 
